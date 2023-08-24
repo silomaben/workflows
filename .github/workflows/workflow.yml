@@ -1,4 +1,4 @@
-name: run index js to console.log
+name: Hello
 
 on:
   push:
@@ -9,18 +9,18 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2.0.0
-      
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
+      uses: actions/checkout@v1
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v1
       with:
-        node-version: '14' 
-        
-    - name: Install dependencies
+        node-version: 16.15.1
+
+    - name: Install Dependencies
       run: npm install
-      
-    - name: Run index.js
+
+    - name: Run Node.js script
       run: node index.js
