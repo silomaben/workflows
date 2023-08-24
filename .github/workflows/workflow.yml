@@ -1,25 +1,24 @@
-name: Hello
+name: you_just_worked_the_other_minute
 
 on:
   push:
     branches:
-      - main
-
+        - main
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
-      uses: actions/setup-node@v2.0.0
+      uses: actions/checkout@v1
 
     - name: Setup Node.js
-      uses: actions/setup-node@v2.0.0
+      uses: actions/setup-node@v1
       with:
-        node-version: '14'
+        node-version: 16.15.1
 
     - name: Install Dependencies
       run: npm install
 
-    - name: Run index.js to that logs hello world
+    - name: Run Node.js script
       run: node index.js
