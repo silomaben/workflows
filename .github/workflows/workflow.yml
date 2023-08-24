@@ -11,15 +11,15 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v1
+      uses: actions/setup-node@v2.0.0
 
     - name: Setup Node.js
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v2.0.0
       with:
         node-version: 16.15.1
 
     - name: Install Dependencies
       run: npm install
 
-    - name: Run Node.js script
+    - name: Run index.js to that logs hello world
       run: node index.js
